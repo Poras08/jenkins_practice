@@ -1,15 +1,11 @@
-pipeline{
-  agent any
-  stages {
-    
-    stage('Create'){
-      steps {
-             gcloud compute instances create centos-instance  --image-family=centos-7 --image-project=centos-cloud  --zone=europe-west2-c 
-      
-      }
-    
+pipeline {
+    agent { docker { image 'python:3.5.1' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'python --version'
+                sh 'python main.py'
+            }
+        }
     }
-
-     
-  }
 }
