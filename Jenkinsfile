@@ -6,16 +6,9 @@ pipeline{
         steps {
 
              echo "Hello World"
-             bat 'python main.py'
+             bat label:'', script: 'python main.py'
 
         }
-
-
-
      }
-
-
   }
-
-
 }
