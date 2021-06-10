@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+             
+             image 'gcr.io/google.com/cloudsdktool/cloud-sdk:latest'
+        }
+    
+    }
     stages {
         
         stage ('Checkout'){
