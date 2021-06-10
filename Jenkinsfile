@@ -9,8 +9,10 @@ pipeline {
         }
         stage('Show') {
             steps {
-              
-                  gcloud compute images list
+                  sh label:"List all images",
+                     script: """
+                             gcloud compute images list
+                             """      
             }
         }
     }
