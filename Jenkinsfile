@@ -11,7 +11,7 @@ pipeline {
             steps {
                   sh label:"List all images",
                      script: """
-                             gcloud compute images list
+                             gcloud compute instances create centos5 --image-family=centos-7 --image-project=centos-cloud
                              """      
             }
         }
