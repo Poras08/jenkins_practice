@@ -7,10 +7,10 @@ pipeline {
                   }
             
         }
-        stage('build') {
+        stage('Show') {
             steps {
-               git credentialsId: 'c0b259b2-ae10-4a42-8f86-16c1285b3472', url: 'https://github.com/Poras08/jenkins_practice.git'
-               sh 'python main.py'
+              
+                  gcloud compute images list
             }
         }
     }
