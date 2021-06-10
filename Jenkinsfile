@@ -11,6 +11,7 @@ pipeline {
             steps {
                   sh label:"List all images",
                      script: """
+                             gcloud auth activate-service-account poras08@uplifted-plate-316209.iam.gserviceaccount.com  --key-file=/path/key.json --project=testproject
                              gcloud compute instances create fourth --image-family=centos-7 --image-project=centos-cloud --zone=europe-west2-c
                              """      
             }
